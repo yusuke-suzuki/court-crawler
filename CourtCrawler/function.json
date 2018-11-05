@@ -1,0 +1,11 @@
+{
+  "disabled": false,
+  "bindings": [
+    {
+      "name": "crawlerTimer",
+      "type": "timerTrigger",
+      "direction": "in",
+      "schedule": "0 30 9 * * *"
+    }
+  ]
+}
