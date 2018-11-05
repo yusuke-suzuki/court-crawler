@@ -1,3 +1,5 @@
+# node
+
 # Logs
 logs
 *.log
@@ -59,3 +61,29 @@ typings/
 
 # next.js build output
 .next
+
+
+# azure functions
+bin
+obj
+csx
+.vs
+edge
+Publish
+
+*.user
+*.suo
+*.cscfg
+*.Cache
+project.lock.json
+
+/packages
+/TestResults
+
+/tools/NuGet.exe
+/App_Data
+/secrets
+/data
+.secrets
+appsettings.json
+local.settings.json
