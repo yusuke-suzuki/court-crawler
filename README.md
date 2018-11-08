@@ -1,8 +1,3 @@
 # court-crawler
 Checking the availability of tennis courts and notify it.
-
-## How to
-```
-cd court-crawler
-node index.js
-```
+Powered by Google Cloud Functions, Pub/Sub, Cloud Scheduler, and Puppeteer.
