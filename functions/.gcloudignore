@@ -17,3 +17,6 @@ node_modules
 #!include:.gitignore
 
 README.md
+
+test.js
+.env
