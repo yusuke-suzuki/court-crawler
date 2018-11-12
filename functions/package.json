@@ -5,6 +5,7 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
+    "@slack/client": "^4.8.0",
     "puppeteer": "^1.10.0"
   },
   "devDependencies": {
