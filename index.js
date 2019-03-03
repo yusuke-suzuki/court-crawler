@@ -8,15 +8,18 @@ exports.courtCrawler = async (eventData, eventContext, callback) => {
   console.log(eventData);
   console.log(eventContext);
 
-  await crawler();
+  const results = await crawler();
+  console.log(results);
 
-  webhook.send(createSlackMessage(), (err, res) => {
-    if (err) {
-      console.log('Failed to send message to slack: ', err);
-    } else {
-      console.log('Message sent to slack: ', res);
-    }
-  });
+  if (results.length > 0) {
+    webhook.send(createSlackMessage(results), (err, res) => {
+      if (err) {
+        console.log('Failed to send message to slack: ', err);
+      } else {
+        console.log('Message sent to slack: ', res);
+      }
+    });
+  }
 
   callback();
 };
