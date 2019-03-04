@@ -1,25 +1,30 @@
-const createSlackMessage = () => {
-  let message = {
-    text: `最新の空き情報を取得しました！`,
+const createSlackMessage = results => {
+  const attachments = results.map(parkResult => {
+    return createAttachment(parkResult);
+  });
+
+  const message = {
+    text: `最新の空き情報を取得しました！\n[施設空き情報](${
+      process.env.ENDPOINT
+    })`,
     mrkdwn: true,
-    attachments: [
-      {
-        title: `公園別空き情報一覧`,
-        title_link: process.env.ENDPOINT,
-        fields: [
-          {
-            title: `ほげほげ公園`,
-            value: `:ok:`
-          },
-          {
-            title: `ほげほげ海岸公園`,
-            value: `:ok:`
-          }
-        ]
-      }
-    ]
+    attachments: attachments
   };
   return message;
+};
+
+const createAttachment = parkResult => {
+  const fields = parkResult.results.map(dateResult => {
+    return {
+      title: dateResult.date,
+      value: dateResult.results.join('\n')
+    };
+  });
+
+  return {
+    title: parkResult.parkName,
+    fields: fields
+  };
 };
 
 module.exports = createSlackMessage;

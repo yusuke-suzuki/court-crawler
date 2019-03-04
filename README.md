@@ -12,7 +12,7 @@ gcloud beta pubsub topics create court-crawler
 gcloud beta scheduler jobs create pubsub court-crawler --schedule "every 24 hours" --topic court-crawler --message-body="Run crawler"
 
 # deploy cloud function
-gcloud functions deploy courtCrawler --trigger-topic court-crawler --runtime nodejs8 --env-vars-file .env.yaml --region <Target region> --memory 1024MB
+gcloud functions deploy courtCrawler --trigger-topic court-crawler --runtime nodejs8 --env-vars-file .env.yaml --region <Target region> --memory 1024MB --timeout 300s
 ```
 
 ## References
