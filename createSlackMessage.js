@@ -4,9 +4,7 @@ const createSlackMessage = results => {
   });
 
   const message = {
-    text: `最新の空き情報を取得しました！\n[施設空き情報](${
-      process.env.ENDPOINT
-    })`,
+    text: `最新の空き情報を取得しました！\n${process.env.ENDPOINT}`,
     mrkdwn: true,
     attachments: attachments
   };
