@@ -6,7 +6,7 @@
   "private": true,
   "dependencies": {
     "@slack/client": "^4.10.0",
-    "puppeteer": "^1.12.2"
+    "puppeteer": "^4.0.1"
   },
   "devDependencies": {
     "dotenv": "^6.2.0"
